@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>js scope</title>
+    <script type="text/javascript">
+    //js scope:local scope and global scope
+
+    //local scope:	
+    //When you using the clause document.write(carName); 
+    //to output a variable not defined,it will dump and raised an error message 
+    //Uncaught ReferenceError: carName is not defined
+    //You can use typeof to fix it,and output the undefined.
+
+    //document.write(carName); 
+    //For the local variable,you can only call it inside the funtion.
+    document.write(typeof(carName));
+
+    document.write('<br/>');
+    myFunction();
+
+    function myFunction() {
+        var carName = "Volvo";
+        document.write(carName);
+    }
+
+    //global scope
+    //For the global scope, you can call it in the function even the whole page.
+    var name = "Thomas";
+    document.write('<br/>');
+    document.write(name);
+    document.write('<br/>');
+    myName();
+
+    function myName() {
+        document.write(name);
+    }
+
+    //If you define a variable without key words var in the function,
+    //it will become global variable automatically after you call the function.
+    document.write('<br/>');
+    myResult();
+    document.write('<br/>');
+    document.write(a);
+    function myResult(){
+    	a = 1;
+    	document.write(a);
+    }
+
+
+    //all the variables are belong to object window in Html.
+    myResult1();
+    document.write('<br/>');
+    document.write(window.b);
+    function myResult1(){
+    	b = 3;
+    	//document.write(a);
+    }
+
+    //The global variable and function can override the variable and funtion belong to object window.
+    //The local variable including object window can override the the global variable and function.
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

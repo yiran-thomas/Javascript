@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>js string</title>
+    <script type="text/javascript">
+    //string definition
+    var name = "Thomas";
+    var name1 = 'Jack';
+    //you can use the index to address the char in the string
+    var char = name[2];
+    document.write(char);
+
+    var answer = "It's all right.";
+    var answer = "He is called 'Johnny'";
+    var answer = 'He is called "Johnny"';
+
+    var x = 'It\'s all right';
+    var y = "He is called \"Johnny\"";
+
+    var txt = "I Love You";
+    var len = txt.length;
+    document.write("<br />" + len);
+
+
+    var sname = "John"; //string
+    var sname1 = new String("John"); //object
+    document.write("<br />" + typeof sname + "<br />" + typeof sname1 + "<br />");
+
+    if (sname === sname1) {
+        document.write("they are same things")
+    } else {
+        document.write("they are the different things")
+    }
+    //Properties for string
+    document.write("<br />" + sname.constructor);
+    document.write("<br />" + sname.length);
+    document.write("<br />" + sname.prototype); //undefined
+
+    var a = sname.charAt(2);
+    document.write("<br />" + a); //h
+
+    var b = sname.charCodeAt(2);
+    document.write("<br />" + b); //104
+
+    var c = sname.concat(sname1);
+    document.write("<br />" + c); //JohnJohn
+
+    var d = String.fromCharCode(65, 66, 67);
+    document.write("<br />" + d); //ABC
+
+    document.write("<br />" + sname.indexOf("o"));//1
+    //if the search string 'a' is not found,it will returns '-1'
+    document.write("<br />" + sname.indexOf("a"));//-1
+    document.write("<br />" + sname.lastIndexOf("o"));//1
+    //if the search string 'a' is not found,it will returns '-1'
+    document.write("<br />" + sname.lastIndexOf("a"));//-1
+
+    var city = "shanghai";
+    var city1 = "shanghai";
+    var res = city.localeCompare(city1);
+    document.write("<br />" + res);//0 
+    
+    var mon = "Monday",
+        tue = "Tuesday",
+        wed = "Wednesday";  
+    var res1 = mon.localeCompare(tue),
+        res2 = wed.localeCompare(tue);
+    document.write("<br />" + res1);//-1   
+    document.write("<br />" + res2);//1    
+     
+    //match the string
+    var str = "Hello World!";
+    document.write("<br />" + str.match("World!"));//World!
+    document.write("<br />" + str.match("Helllo"));//null
+
+    //match the pattern
+    var str2 = "1 plus 2 equal 3";
+    //match the number globally
+    document.write("<br />" + str2.match(/\d+/g));//1,2,3
+
+    var str3 = "Visit Microsoft";
+    document.write("<br />" + str3.replace(/Microsoft/, "W3School"));//Visit W3School
+
+    var str4 = "Welcome to Microsoft! "
+    str4 = str4 + "We are proud to announce that Microsoft has";
+    str4 = str4 + "one of the largest Web Developers sites in the world.";
+
+    document.write("<br />" + str4.replace(/Microsoft/g, "W3School"));
+    //Welcome to W3School! We are proud to announce that W3School hasone of the largest Web Developers sites in the world.
+
+    var str5 = "javascript Tutorial";
+    document.write("<br />" + str5.replace(/javascript/i,"JavaScript"));//JavaScript Tutorial
+
+    var str6 = "Doe, John";
+    document.write("<br />" + str6.replace(/(\w+)\s*, \s*(\w+)/,"$2 $1"));//John Doe
+
+    var str7 = '"a","b"';
+    document.write("<br />" + str7.replace(/"([^"]*)"/g,"'$1'"));//'a','b'    
+
+    var str8 = "hello world";
+    var uw = str8.replace(/\b\w+\b/g,function(word){
+    	return word.substring(0,1).toUpperCase()+word.substring(1);
+    });
+
+    document.write("<br />" + uw);//Hello World
+   
+    var str9 = "I like it.";
+    document.write("<br />" + str9.search(/like/));//2
+    document.write("<br />" + str9.search(/Like/));//-1
+     document.write("<br />" + str9.search(/Like/i));//2  
+
+    var str10 = "I book a dinner";
+    document.write("<br />" + str10.slice(2));//book a dinner
+    document.write("<br />" + str10.slice(4,10));//ok a d
+
+    document.write("<br />" + "2:3:4:5".split(":"));//2,3,4,5
+    document.write("<br />" + "hello".split(""));//h,e,l,l,o
+    document.write("<br />" + "hello".split("",3));//h,e,l
+
+
+    document.write("<br />" + "hello".substr(0,2));//he
+    document.write("<br />" + "hello".substr(-1,2));//o    
+    document.write("<br />" + "hello".substring(0,2));//he
+    document.write("<br />" + "hello".substring(-1,2));//he,not supported -1
+
+    document.write("<br />" + "hello".toUpperCase());//HELLO
+    document.write("<br />" + "HELLO".toLowerCase());//hello
+    document.write("<br />" + "hello".toLocaleUpperCase());//HELLO
+    document.write("<br />" + "HELLO".toLocaleLowerCase());//hello
+
+    document.write("<br />" + " hello ".trim());//hello
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

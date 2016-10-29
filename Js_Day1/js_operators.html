@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>js operators</title>
+    <script type="text/javascript">
+    var x = 5;
+    y = ++x;
+    document.write("x=" + x + " y=" + y); //6,6
+    var a = 3;
+    b = a++;
+    document.write("<br/>a=" + a + " b=" + b); //4,3   
+    var x = 5;
+    y = --x;
+    document.write("<br/>x=" + x + " y=" + y); //4,4	
+
+    var a = 3;
+    b = a--;
+    document.write("<br/>a=" + a + " b=" + b); //2,3
+
+    var txt1 = 'hello';
+    var txt2 = ' world';
+    var txt3 = txt1 + txt2;
+    document.write("<br/>" + txt3);//hello world
+
+    document.write("<br/>" + "Hello" + 5);//Hello5
+
+    var age = 12;
+    var res = (age < 18)?"too young":"too old";
+
+    document.write("<br/>" + res);
+    document.write("<br/>");
+
+    //if clause
+    var day = new Date();
+    var hour = day.getHours();
+    if (hour < 10) {
+    	document.write("morning");
+
+    }else if (hour < 16) {
+    	document.write("afternoon");   
+    }else{
+    	document.write("evening");       	
+    }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
