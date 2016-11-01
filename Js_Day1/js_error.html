@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>js error(trow catch)</title>
+    <script>
+    var txt = "";
+
+    function myFunc() {
+
+		try{
+			adddlert("hello world");
+		}
+		catch(err){
+            txt="本页有一个错误. \n\n";
+            txt+="错误描述:" + err.message + "\n\n";
+            txt+="点击确定继续. \n\n";
+            alert(txt);          
+		}
+    };
+
+    function myFunc1(){
+        try{
+            var x = document.getElementById("demo1").value;
+            if (x=="") {
+                throw "值为空";  
+            }
+
+            if (isNaN(x)) {
+                throw "不是数字";
+            }
+
+            if (x>10) {
+                throw "太大";
+            }
+
+            if (x<5) {
+                throw "太小";
+            }
+        }
+        catch(err){
+        var y = document.getElementById("mess");
+        y.innerHTML = "错误:" + err + ".";
+        }        
+    }
+
+    </script>
+</head>
+
+<body>
+    <div id="demo">
+        <button onclick="myFunc()">test</button>
+        <p>请输入一个5到10之间的数字:</p>
+        <input type="text" id="demo1">
+        <button type="button" onclick="myFunc1()">测试输入</button>
+        <p id="mess"></p>
+    </div>
+</body>
+
+</html>
