@@ -1,9 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Js regex</title>
+
+	<script>
+
+		var str = "Visit w3cschool";
+		//使用正则表达式进行search
+		var n = str.search(/w3cschool/i);//i 忽略大小写
+		document.write(n + "<br/>");//6
+        //直接search
+		var res = str.search("w3cschool");
+		document.write(res + "<br/>");//6
+
+        //使用正则表达式进行replace
+        var str1 = "Visit Microsoft";
+        var res1 = str.replace(/microsoft/i, "w3cschool");
+        document.write(res1 + "<br/>");
+        
+        //直接使用replace
+        var str2 = "Visit Microsoft";
+        var res2 = str2.replace("Microsoft", "w3cschool");
+        document.write(res2 + "<br/>");
+
+        //修饰符
+        //i 执行对大小写不敏感的匹配
+        //g 执行全局匹配
+        //m 执行多行匹配
+        
+        //模式
+        //[abc]查找方括号之间的任何字符
+        //[0-9]查找任何从0-9的数字
+        //(x|y)查找任何以|分隔的选项
+        
+        //元字符
+        //\d 查找数字
+        //\s 查找空白字符
+        //\b 匹配单词边界
+        //\uxxxx 查找以十六进制数 xxxx 规定的Unicode 字符
+        
+        //量词
+        //n+ 匹配任何包含至少一个n的字符串
+        //n* 匹配任何包含零个或多个n的字符串
+        //n? 匹配任何包含零个或一个n的字符串
+        
+        //使用RegExp对象的test 方法
+        //test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false
+        var patt = /e/;
+        document.write(patt.test("The best things in life are free;") + "<br/>");
+        ///e/.test("The best things in life are free!") 
+        
+        //使用exec()
+        //该函数返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null
+        document.write(/e/.exec("The best things in life are free!") + "<br/>");
+        document.write(typeof /e/.exec("The best things in life are free!") + "<br/>");//object
+        if (/e/.exec("The best things in life are free!").constructor.toString().indexOf("Array") > -1 ){
+        	document.write("this is an array");
+        }else{
+        	document.write("this is not an array");
+        }
+	</script>
 </head>
 <body>
-
 </body>
 </html>
